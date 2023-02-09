@@ -26,7 +26,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 
 # Display
-TARGET_SCREEN_DENSITY := 480
+TARGET_SCREEN_DENSITY := 521
 
 # Fingerprint
 TARGET_SEC_FP_HAS_FINGERPRINT_GESTURES := true
@@ -82,11 +82,13 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 TARGET_KERNEL_LLVM_BINUTILS := false
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
+
 TARGET_KERNEL_CLANG_VERSION := r416183b
 TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
 
 # Kernel config
 TARGET_KERNEL_SOURCE := kernel/samsung/universal8895
+#TARNEL_KERNEL_CLANG_COMPILE := false
 
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -150,7 +152,7 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 BOARD_HAVE_SAMSUNG_WIFI          := true
 
 # Sepolicy
-include device/lineage/sepolicy/exynos/sepolicy.mk
+include device/custom/sepolicy/exynos/sepolicy.mk
 BOARD_SEPOLICY_TEE_FLAVOR := mobicore
 include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/samsung/universal8895-common/sepolicy/vendor
